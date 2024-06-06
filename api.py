@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras import datasets, layers, models
 from PIL import Image
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pycurl
 import json
 
@@ -22,12 +22,19 @@ model = models.load_model('image_classifier.keras')
 
 app = Flask(__name__)
 
-@app.route("/get-classification", methods=["POST"])
+@app.route('/')
+def main_page():
+    return render_template("main.html")
+
+@app.route("/get-classification", methods=["POST",'GET'])
 def get_classification():
-    data = request.get_json()
-    url_data = data[0]["url"]
+    #data = request.get_json()
+    #url_data = data[0]["url"]
+    url_data = request.form.get('link')
+
+
     if not url_data.endswith(".jpg"):
-        return jsonify('Image not supporeted'), 415
+        return render_template('main.html',info='Image not supported, 415')
     else:
         image_url = url_data
         save_as = 'image.jpg'
@@ -46,7 +53,9 @@ def get_classification():
 
         prediction = model.predict(np.array([img]) / 255)
         index = np.argmax(prediction)
-        return jsonify(f'Prediction is {class_names[index]}'), 200
+
+        return render_template('main.html',info=class_names[index])
+
 
 
 
