@@ -1,6 +1,6 @@
-tensorflow
-numpy
-opencv-python
-matplotlib
-flask
-pycurl
+tensorflow=2.16.1
+numpy==1.26.4
+opencv-python==4.10.0.82
+matplotlib==3.9.0
+flask==3.0.3
+pycurl==7.45.2
