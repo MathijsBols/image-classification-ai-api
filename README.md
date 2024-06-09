@@ -43,6 +43,24 @@ Start the server
 Open WebUI
 
 [127.0.0.1:5000](http://127.0.0.1:5000)
+
+## Run in docker
+
+Pull the image
+
+```bash
+  docker pull mathijsbols/image-classification-ai-api
+```
+
+Run docker container
+
+```bash
+  docker run -d -p 5000:5000 mathijsbols/image-classification-ai-api
+```
+
+Open WebUI
+
+[127.0.0.1:5000](http://127.0.0.1:5000)
 ## Authors
 
 - [@MathijsBols](https://github.com/MathijsBols)
