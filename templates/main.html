@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI demo page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Classification</title>
+    <link rel="stylesheet" href='/static/styles/main.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <form action="/get-classification" method="post">
-        <h2>Link to image:</h2><br>
-        <input type="text" name="link"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <a href="https://github.com/MathijsBols/image-classification-ai-api" class="github-icon" target="_blank">
+        <i class="fab fa-github"></i>
+    </a>
 
-<h1 >{{info}}</h1>
+    <div class="container">
+        <form action="/get-classification" method="post" class="form">
+            <h2 class="title">AI Image Classification</h2>
+            <h3 class="subtitle">Enter the image URL:</h3>
+            <input type="text" name="link" class="input-box" placeholder="https://example.com/image.jpg">
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+        <div class="info">
+            <h1>{{info}}</h1>
+        </div>
+    </div>
 
 </body>
 </html>
