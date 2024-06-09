@@ -1,6 +1,7 @@
 # image-classification-ai-api
 Simple script in python to classify images from the cifar-10 dataset. Uses an post-api.
 
+[Dockerhub](https://hub.docker.com/repository/docker/mathijsbols/image-classification-ai-api/general)
 
 ## Demo
 
