@@ -7,6 +7,7 @@ WORKDIR /python-docker
 COPY ./templates /python-docker
 COPY ./image_classifier.keras /python-docker
 COPY ./static /python-docker
+COPY ./api.py /python-docker
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 RUN apt-get install ca-certificates
